@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.scorpio.examples.R;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -26,7 +25,7 @@ public class TerminalCommands extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terminal_commands);
         try {
-            Process p = Runtime.getRuntime().exec("");
+            Process p = Runtime.getRuntime().exec("pwd");
             Scanner sc  = new Scanner(new InputStreamReader(p.getInputStream()));
             while(sc.hasNext())
             System.out.println(sc.next());
