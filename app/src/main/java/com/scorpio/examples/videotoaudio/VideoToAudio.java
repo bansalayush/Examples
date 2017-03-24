@@ -20,24 +20,12 @@ import java.io.FilenameFilter;
 
 public class VideoToAudio extends AppCompatActivity {
 
-    /*FFmpeg ffmpeg;
-    *//**//*
-    String[] cmd = {"-y -i /storage/emulated/0/DCIM/Camera/VID_19700114_202244.mp4 -strict experimental -vn -ar 44100 -ac 2 -ab 256k -f /storage/emulated/0/firstAudioTry.mp3", ""};
-    */ProgressDialog pDialog;
+    ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_to_audio);
-
-        File f = new File("/storage/emulated/0/DCIM/Camera");
-        System.out.println("External path -- " + f.getAbsolutePath());
-
-        String files[] = f.list();
-        for (int i = 0; i < files.length; i++) {
-            System.out.println("Files in Videos Directory" + files[i]);
-
-        }
 
         pDialog = new ProgressDialog(VideoToAudio.this);
         new OutAsync().execute();
@@ -46,7 +34,14 @@ public class VideoToAudio extends AppCompatActivity {
 
     class OutAsync extends AsyncTask {
 
-
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog.setMessage("Converting...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
 
         @Override
         protected Object doInBackground(Object[] objects) {
@@ -56,7 +51,7 @@ public class VideoToAudio extends AppCompatActivity {
                 String[] complexCommand = {"ffmpeg", "-y", "-i",
                         "/storage/emulated/0/DCIM/Camera/VID_20161218_185300.mp4" ,"-strict",
                         "experimental" ,"-vn", "-ar" ,"44100" ,"-ac", "2" ,"-ab" ,"256k" ,"-f" ,"mp3"
-                        ,"/storage/emulated/0/output.mp3"
+                        ,"/storage/emulated/0/output2.mp3"
                 };
                 vk.run(complexCommand , workFolder , getApplicationContext());
                 Log.i("test", "ffmpeg4android finished successfully");
@@ -64,6 +59,12 @@ public class VideoToAudio extends AppCompatActivity {
                 Log.e("test", "vk run exception.", e);
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Object o) {
+            super.onPostExecute(o);
+            pDialog.dismiss();
         }
     }
 }
