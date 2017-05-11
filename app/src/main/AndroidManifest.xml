@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scorpio.examples">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <!-- android:roundIcon="" not necessary to add this -->
@@ -13,16 +13,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".terminalcommands.TerminalCommands"/>
+        <activity android:name=".terminalcommands.TerminalCommands" />
         <activity android:name=".imagesize.MainActivity" />
-        <activity android:name=".videotoaudio.VideoToAudio">
+        <activity android:name=".videotoaudio.VideoToAudio" />
+        <activity android:name=".recyclerviewmultiselect.RecyclerActivity" />
+        <activity android:name=".parcelable.StartActivity" />
+        <activity android:name=".parcelable.EndActivity" />
+        <activity android:name=".fileexplorer.ExplorerActivity"></activity>
+        <activity android:name=".database.DatabaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".database.QueryActivity"></activity>
     </application>
 
 </manifest>

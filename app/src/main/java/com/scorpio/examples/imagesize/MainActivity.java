@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showFileChooser() {
         Intent intent = new Intent();
-        intent.setType("image*//*");
+        intent.setType("video/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), 2);
     }

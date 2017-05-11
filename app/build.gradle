@@ -1,17 +1,13 @@
 apply plugin: 'com.android.application'
 
-
-
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.scorpio.examples"
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 23
-        ndk {
-            abiFilter "armeabi-v7a"
-        }
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -26,12 +22,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':ffmpeg4android_lib')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
     compile 'com.writingminds:FFmpegAndroid:0.3.2'
+    compile 'com.android.support:recyclerview-v7:23.0.0'
+    compile 'com.bignerdranch.android:recyclerview-multiselect:0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta1'
     testCompile 'junit:junit:4.12'
 }

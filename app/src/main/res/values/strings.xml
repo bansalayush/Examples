@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Examples</string>
+
+    <string-array name="directories">
+
+
+        <item>/storage/emulated/0/Download</item>
+        <item>/storage/emulated/0/Music</item>
+        <item>/storage/emulated/0/Pictures</item>
+        <item>/storage/emulated/0/Movies</item>
+        <item>/storage/emulated/0/DCIM</item>
+
+    </string-array>
 </resources>

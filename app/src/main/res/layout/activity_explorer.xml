@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.scorpio.examples.fileexplorer.ExplorerActivity">
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/directory"
+        android:gravity="center_horizontal"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>-->
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/directoryList"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:entries="@array/directories"
+        android:background="@null"/>
+
+</LinearLayout>

@@ -18,7 +18,7 @@ public class TerminalCommands extends AppCompatActivity {
      * date    ____  Mon Mar 20 11:21:28 *** 2017
      * ls      ____  acct,bin,cache,charger,config,cust,d,data...... and many more
      *
-     */
+     *//**/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,10 @@ public class TerminalCommands extends AppCompatActivity {
         setContentView(R.layout.activity_terminal_commands);
         System.out.println("....................");
         try {
-            Process p = Runtime.getRuntime().exec("man ffmpeg");
-            Scanner sc  = new Scanner(new InputStreamReader(p.getInputStream()));
-            while(sc.hasNext())
-            System.out.println(sc.next());
+            Process p = Runtime.getRuntime().exec("for i in `seq 1 5`; do echo\"Hello\" ;done");
+            Scanner scInput  = new Scanner(new InputStreamReader(p.getInputStream()));
+            while(scInput.hasNext())
+            System.out.println(scInput.next());
         } catch (IOException e) {
             e.printStackTrace();
         }
